@@ -1,0 +1,170 @@
+.get-started-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 70px 0;
+}
+
+/* GRID LAYOUT */
+.get-started-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+/* LEFT IMAGE */
+.get-started-left {
+    width: 100%;
+}
+
+.get-started-image {
+    width: 100%;
+    height: auto;
+    max-width: 580px;
+    display: block;
+}
+
+/* RIGHT FORM */
+.get-started-right {
+    width: 100%;
+}
+
+.get-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 8px;
+}
+
+.get-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 28px;
+}
+
+/* FORM */
+.get-form {
+    width: 100%;
+}
+
+.get-field {
+    margin-bottom: 18px;
+}
+
+.get-label {
+    display: block;
+    /* font-size: 13px; */
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+/* INPUT BOX */
+.get-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #c9c4ff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: 0.25s ease;
+}
+
+.get-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #111827;
+    background: transparent;
+}
+
+.get-input input::placeholder {
+    color: #9ca3af;
+}
+
+/* ICONS */
+.get-icon svg {
+    font-size: 16px;
+    color: #6f6bff;
+}
+
+/* IMAGE ICONS (Medium/Youtube) */
+.get-icon-img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-icon-img img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* FOCUS EFFECT (exact like screenshot) */
+.get-input:focus-within {
+    border-color: #6f6bff;
+    box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.18);
+}
+
+/* BUTTON */
+.get-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    background: linear-gradient(90deg, #6f6bff, #4f74ff);
+    box-shadow: 0px 10px 30px rgba(111, 107, 255, 0.35);
+    transition: 0.25s ease;
+}
+
+.get-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 14px 34px rgba(111, 107, 255, 0.45);
+}
+
+.get-footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.get-footer a {
+    color: #6f6bff !important;
+    /* font-weight: 700; */
+    text-decoration: none;
+}
+
+.get-footer a:hover {
+    text-decoration: underline;
+}
+
+/* spacing between medium & youtube inputs */
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .get-started-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .get-title {
+        font-size: 34px;
+    }
+
+    .get-started-image {
+        max-width: 100%;
+    }
+}

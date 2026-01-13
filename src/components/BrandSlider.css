@@ -1,0 +1,29 @@
+.brand-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brand-track {
+    display: flex;
+    width: max-content;
+}
+
+.brand-item {
+    flex: 0 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.brand-item img {
+    height: 40px;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.4s ease;
+}
+
+.brand-item img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}

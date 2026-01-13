@@ -1,0 +1,127 @@
+* {
+  font-family: "Inter", sans-serif !important;
+}
+
+
+.bg-violet {
+  background-color: #7C4EE4 !important;
+}
+
+.btn-main {
+  background-color: #7C4EE4 !important;
+  color: white !important;
+
+}
+
+.btn-violet {
+  /* background-color: #7C4EE4 !important; */
+  background: linear-gradient(135deg, #7C4EE4, #45BFFD);
+  color: white !important;
+}
+
+.gradient-border-btn {
+  position: relative;
+  background: #fff;
+  color: #7C4EE4;
+  border: none;
+  z-index: 1;
+  padding: 10px 24px;
+}
+
+.gradient-border-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  /* border thickness */
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7C4EE4, #45BFFD);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* Hover polish */
+.gradient-border-btn:hover {
+  color: #45BFFD;
+  background: #fff;
+}
+
+/* Hero Banner Section Starts */
+/* ---------- PAGE LEVEL SHAPE ---------- */
+.hero-page-shape-img {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 725px;
+  max-width: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- IMAGE CENTER BLOCK ---------- */
+.hero-image-center {
+  position: relative;
+  z-index: 1;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-bg {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: linear-gradient(135deg, #7C4EE4, #45BFFD);
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(90px);
+  z-index: 0;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating effect */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991px) {
+  .hero-page-shape-img {
+    width: 360px;
+    top: -90px;
+    right: -90px;
+  }
+
+  .hero-image-bg {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-image-center {
+    margin-top: 3rem;
+  }
+}
+
+
+/* Hero Banner Section Ends */

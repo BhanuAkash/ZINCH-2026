@@ -1,0 +1,138 @@
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Avatar1 from "../assets/images/testimonials/Ellipse 4.png";
+import Avatar2 from "../assets/images/testimonials/Ellipse 5.png";
+import Avatar3 from "../assets/images/testimonials/Ellipse 6.png";
+import './StatsSection.css'
+import PlayButton from '../assets/icons/Frame.png'
+
+
+export default function StatsSection() {
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { margin: "-100px" });
+
+    const [contributors, setContributors] = useState(0);
+    const [docs, setDocs] = useState(0);
+    const [projects, setProjects] = useState(0);
+
+    useEffect(() => {
+        let timers = [];
+
+        if (isInView) {
+            animateCounter(setContributors, 2150);
+            animateCounter(setDocs, 458);
+            animateCounter(setProjects, 85);
+        } else {
+            setContributors(0);
+            setDocs(0);
+            setProjects(0);
+        }
+
+        function animateCounter(setter, end) {
+            let current = 0;
+            const duration = 1200;
+            const increment = Math.ceil(end / (duration / 16));
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    setter(end);
+                    clearInterval(timer);
+                } else {
+                    setter(current);
+                }
+            }, 16);
+
+            timers.push(timer);
+        }
+
+        return () => timers.forEach(clearInterval);
+    }, [isInView]);
+
+    return (
+        <section ref={sectionRef} className="py-5">
+            <div className="container">
+                <div className="row align-items-center g-4">
+
+                    {/* LEFT STATS */}
+                    <div className="col-lg-7">
+                        <div className="row text-center text-lg-start">
+
+                            <motion.div
+                                className="col-md-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.6 }}
+                            >
+                                <h2 className="fw-bold display-6 mb-1">
+                                    {contributors.toLocaleString()}+
+                                </h2>
+                                <p className="text-muted mb-0">Contributors</p>
+                            </motion.div>
+
+                            <motion.div
+                                className="col-md-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.6 }}
+                            >
+                                <h2 className="fw-bold display-6 mb-1">
+                                    {docs.toLocaleString()}+
+                                </h2>
+                                <p className="text-muted mb-0">Proposal Docs</p>
+                            </motion.div>
+
+                            <motion.div
+                                className="col-md-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ amount: 0.6 }}
+                            >
+                                <h2 className="fw-bold display-6 mb-1">
+                                    {projects.toLocaleString()}+
+                                </h2>
+                                <p className="text-muted mb-0">Projects Shipped</p>
+                            </motion.div>
+
+                        </div>
+                    </div>
+
+                    {/* RIGHT LIVE ACTIVITY */}
+                    <div className="col-lg-5 d-flex justify-content-center">
+                        <motion.div
+                            className="live-pill d-flex align-items-center gap-3"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ amount: 0.6 }}
+                        >
+                            <div className="small">
+                                SarahDev just committed<br />
+                                code to Open-Source CRM
+                            </div>
+                            <div className="avatar-stack">
+                                <img src={Avatar1} alt="user" />
+                                <img src={Avatar2} alt="user" />
+                                <img src={Avatar3} alt="user" />
+                            </div>
+
+                            <motion.button
+                                className="btn btn-main rounded-pill px-4 py-3"
+                                whileHover={{ scale: 1.08 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <img
+                                    src={PlayButton}
+                                    className="img-fluid me-2"
+                                    alt=""
+                                    style={{ width: "20px", height: "auto" }}
+                                />
+                                Live Now
+                            </motion.button>
+                        </motion.div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+}

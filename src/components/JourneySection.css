@@ -1,0 +1,14 @@
+.journey-section {
+    background: #fafbff;
+}
+
+.journey-image {
+    max-width: 100%;
+}
+
+/* Mobile spacing */
+@media (max-width: 991px) {
+    .journey-image {
+        margin-top: 2rem;
+    }
+}
