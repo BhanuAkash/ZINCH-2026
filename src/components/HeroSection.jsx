@@ -26,7 +26,17 @@ const letter = {
 
 export default function HeroSection() {
     return (
-        <section className="py-5 overflow-hidden">
+        <section className="py-5 overflow-hidden position-relative">
+            {/* Decorative shape */}
+            <motion.img
+                src={HeroShape}
+                alt="Shape"
+                className="hero-page-shape-img"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1 }}
+            />
             <div className="container">
 
                 {/* Logo */}
@@ -103,16 +113,7 @@ export default function HeroSection() {
                     {/* RIGHT SIDE */}
                     <div className="col-lg-6 position-relative">
 
-                        {/* Decorative shape */}
-                        <motion.img
-                            src={HeroShape}
-                            alt="Shape"
-                            className="hero-page-shape-img"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false }}
-                            transition={{ duration: 1 }}
-                        />
+
 
                         <div className="hero-image-center">
 
