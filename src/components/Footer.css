@@ -1,7 +1,10 @@
+.footer-main{
+    background: url(../assets/images/footer-bg.png) center no-repeat;
+}
+
 .footer-section {
-    background: #ffffff;
     padding: 60px 0 30px;
-    border-top: 1px solid #eee;
+    /* border-top: 1px solid #eee; */
 }
 
 .footer-logo {
