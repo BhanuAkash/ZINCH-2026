@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-
 import Logo from "../assets/logos/logo.png";
 import Rocket from "../assets/icons/rocket-01.png";
 import HeroShape from "../assets/shapes/shape-1.png";
 import howItWorksImg from "../assets/images/how-works.png";
-
 import "./HowWorks.css";
-import CareerCTA from "../components/CareerCTA";
 import Footer from '../components/Footer'
 
 const title = "Turn Proposals into Real-World Solutions";
@@ -72,9 +69,7 @@ export default function HeroSection() {
 
     return (
         <>
-            {/* =======================
-          HERO / BANNER
-      ======================= */}
+            {/* ======================= HERO / BANNER  ======================= */}
             <section className="hero-section">
                 <div className="container">
                     {/* Logo */}
@@ -145,9 +140,7 @@ export default function HeroSection() {
                 </div>
             </section>
 
-            {/* =======================
-          HOW IT WORKS (IMAGE + HOVERS)
-      ======================= */}
+            {/* ======================= HOW IT WORKS (IMAGE + HOVERS) ======================= */}
             <section className="howworks-section">
                 <div className="container">
                     <motion.h2
@@ -242,9 +235,6 @@ export default function HeroSection() {
                     </motion.div>
                 </div>
             </section>
-
-            {/* CTA Section */}
-            <CareerCTA />
 
             {/* Footer */}
             <Footer />

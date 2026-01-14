@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./WhyChooseZinch.css";
 
 // video
@@ -9,8 +9,8 @@ import VideoFile from "../assets/images/video-resume.mp4";
 import IconShowcase from "../assets/icons/showcase.png";
 import IconNetwork from "../assets/icons/network.png";
 import IconCommunity from "../assets/icons/community.png";
-import IconLearn from "../assets/icons/network.png";
-import IconUsers from "../assets/icons/network.png";
+import IconLearn from "../assets/icons/community.png"; // Assuming correct path; adjust if needed
+import IconUsers from "../assets/icons/community.png"; // Assuming correct path; adjust if needed
 
 // arrows
 import Arrow1 from "../assets/icons/arrow-1.png";
@@ -28,11 +28,12 @@ const cards = [
         title: "100K+",
         desc: "Worldwide Active Users",
         icon: IconUsers,
+        button: "Join Now", // Added hover button
         position: "card-left-bottom",
     },
     {
-        title: "Networking ",
-        desc: "Opportunities",
+        title: "Networking",
+        desc: "Worldwide Active Users",
         icon: IconNetwork,
         button: "Explore",
         position: "card-right-top",
@@ -55,6 +56,19 @@ const cards = [
 
 export default function WhyChooseZinch() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handleVideoClick = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
 
     return (
         <section className="why-zinch-section py-5">
@@ -65,6 +79,7 @@ export default function WhyChooseZinch() {
                     className="fw-bold mb-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                 >
                     Why Choose Zinch in Me?
                 </motion.h2>
@@ -73,6 +88,7 @@ export default function WhyChooseZinch() {
                     className="text-muted mb-5"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     Unlock your true potential and discover a world of opportunities
                     that align with your skills, interests, and aspirations
@@ -98,13 +114,13 @@ export default function WhyChooseZinch() {
                             initial={{ scale: 0.9, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.6 }}
+                            onClick={handleVideoClick}
                         >
                             <div className="video-card">
                                 <video
+                                    ref={videoRef}
                                     src={VideoFile}
-                                    autoPlay
                                     loop
-                                    muted
                                     playsInline
                                     className="video-element"
                                 />
@@ -114,8 +130,8 @@ export default function WhyChooseZinch() {
                     </div>
 
                     {/* ARROWS */}
-                    <img src={Arrow1} className="curvy-arrow arrow-1" alt="" />
-                    <img src={Arrow2} className="curvy-arrow arrow-2" alt="" />
+                    <img src={Arrow2} className="curvy-arrow arrow-1" alt="" />
+                    <img src={Arrow1} className="curvy-arrow arrow-2" alt="" />
 
                     {/* FEATURE CARDS */}
                     {cards.map((card, index) => {
@@ -124,10 +140,10 @@ export default function WhyChooseZinch() {
                         return (
                             <motion.div
                                 key={index}
-                                className={`zinch-card ${card.position} ${isActive ? "active" : ""
-                                    }`}
+                                className={`zinch-card ${card.position} ${isActive ? "active" : ""}`}
                                 onMouseEnter={() => setActiveIndex(index)}
                                 whileHover={{ y: -6 }}
+                                transition={{ duration: 0.3 }}
                             >
                                 <div className="card-inner">
                                     <div className="card-icon">
@@ -143,6 +159,7 @@ export default function WhyChooseZinch() {
                                                 className="btn btn-violet rounded-pill btn-sm"
                                                 initial={{ opacity: 0, y: 8 }}
                                                 animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.3 }}
                                             >
                                                 {card.button}
                                             </motion.button>

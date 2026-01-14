@@ -3,7 +3,6 @@ import StatsSection from "../components/StatsSection";
 import JourneySection from "../components/JourneySection";
 import ProposalSection from "../components/ProposalSection";
 import WhyChooseZinch from "../components/WhyChooseZinch";
-import CareerCTA from '../components/CareerCTA'
 import Footer from '../components/Footer'
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
             <JourneySection />
             <ProposalSection />
             <WhyChooseZinch />
-            <CareerCTA />
             <Footer />
         </>
     );

@@ -12,6 +12,7 @@ const brands = [Google, Slack, Heroku, Agworld, Riotinto];
 export default function BrandSlider() {
     return (
         <div className="brand-wrapper mt-5">
+            <h5 className="text-secondary mb-5">Trusted by industry leaders worldwide</h5>
             <motion.div
                 className="brand-track"
                 animate={{ x: [0, "-50%"] }}
