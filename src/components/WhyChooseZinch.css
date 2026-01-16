@@ -1,9 +1,15 @@
+/* ============================= */
 /* SECTION */
+/* ============================= */
+
 .why-zinch-section {
     background: #fafbff;
 }
 
+/* ============================= */
 /* MAIN WRAPPER */
+/* ============================= */
+
 .zinch-wrapper {
     position: relative;
     max-width: 900px;
@@ -11,17 +17,23 @@
     margin: 0 auto;
 }
 
+/* ============================= */
 /* CENTER LAYER */
+/* ============================= */
+
 .zinch-center {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
+/* ============================= */
 /* VIDEO */
+/* ============================= */
+
 .video-card-wrapper {
     width: 230px;
     height: 420px;
@@ -30,6 +42,7 @@
 }
 
 .video-card {
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 24px;
@@ -55,11 +68,16 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 4px 12px;
-    /* font-size: 12px; */
-    color: white;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
 }
 
+/* ============================= */
 /* CIRCLES */
+/* ============================= */
+
 .video-circle {
     position: absolute;
     top: 50%;
@@ -68,7 +86,7 @@
     border: 1px solid rgba(124, 78, 228, 0.35);
     transform: translate(-50%, -50%);
     animation: pulse 6s linear infinite;
-    transition: border-color 0.3s ease;
+    pointer-events: none;
 }
 
 .circle-1 {
@@ -102,19 +120,20 @@
     }
 }
 
+/* ============================= */
 /* ARROWS */
+/* ============================= */
+
 .curvy-arrow {
     position: absolute;
     width: 80px;
     pointer-events: none;
-    transition: transform 0.3s ease;
 }
 
 .arrow-1 {
     top: 45%;
     left: 50%;
     transform: translate(140px, -180px) rotate(-30deg);
-    /* Adjusted for better side placement and curve matching */
 }
 
 .arrow-2 {
@@ -123,9 +142,10 @@
     transform: translate(-160px, 180px);
 }
 
-
-
+/* ============================= */
 /* CARDS */
+/* ============================= */
+
 .zinch-card {
     position: absolute;
     width: 260px;
@@ -162,7 +182,10 @@
     margin-bottom: 10px;
 }
 
+/* ============================= */
 /* CARD POSITIONS */
+/* ============================= */
+
 .card-left-top {
     left: -40px;
     top: 150px;
@@ -188,18 +211,41 @@
     top: 380px;
 }
 
-/* RESPONSIVE */
+/* ============================= */
+/* RESPONSIVE (md & sm) */
+/* ============================= */
+
 @media (max-width: 992px) {
     .zinch-wrapper {
         height: auto;
     }
 
     .zinch-center {
-        position: static;
+        position: relative;
         margin-bottom: 2rem;
     }
 
-    .video-circle,
+    /* Keep circles visible but scale down */
+    .circle-1 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-2 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-3 {
+        width: 340px;
+        height: 340px;
+    }
+
+    .video-circle {
+        opacity: 0.6;
+    }
+
+    /* Hide arrows only */
     .curvy-arrow {
         display: none;
     }
@@ -209,5 +255,176 @@
         margin: 12px auto;
         width: 100%;
         max-width: 320px;
+    }
+}
+
+/* ============================= */
+/* MOBILE EXACT DESIGN (<=768px) */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .zinch-wrapper {
+        height: auto;
+        max-width: 360px;
+        padding-bottom: 20px;
+    }
+
+    .zinch-center {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    /* ----------------------------- */
+    /* VIDEO CARD */
+    /* ----------------------------- */
+
+    .video-card-wrapper {
+        width: 180px;
+        height: 320px;
+    }
+
+    .video-label {
+        bottom: 70px;
+        font-size: 11px;
+    }
+
+    /* ----------------------------- */
+    /* CIRCLES (MATCH IMAGE) */
+    /* ----------------------------- */
+
+    .circle-1 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-2 {
+        width: 270px;
+        height: 270px;
+    }
+
+    .circle-3 {
+        width: 320px;
+        height: 320px;
+    }
+
+    .video-circle {
+        border-color: rgba(120, 90, 255, 0.4);
+        opacity: 0.9;
+    }
+
+    /* ----------------------------- */
+    /* ARROWS (VISIBLE ON MOBILE) */
+    /* ----------------------------- */
+
+    .curvy-arrow {
+        width: 35px;
+        display: block;
+        opacity: 0.9;
+    }
+
+    .arrow-1 {
+        top: 45%;
+        left: 50%;
+        transform: translate(95px, -110px) rotate(-10deg);
+    }
+
+    .arrow-2 {
+        top: 45%;
+        left: 45%;
+        transform: translate(-115px, 95px) rotate(0deg);
+    }
+
+    /* ----------------------------- */
+    /* CARDS → STACKED PILLS */
+    /* ----------------------------- */
+
+    .zinch-card {
+        position: static;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        border-radius: 14px;
+        padding: 12px 14px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-inner {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .card-icon img {
+        width: 30px;
+    }
+
+    .card-content h6 {
+        font-size: 0.85rem;
+    }
+
+    .card-content p {
+        font-size: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    /* ----------------------------- */
+    /* BUTTON (HIDDEN ON MOBILE) */
+    /* ----------------------------- */
+
+    /* .zinch-card button {
+        display: none;
+    } */
+}
+
+/* ========================================= */
+/* MOBILE CARD ORDER FIX */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    .zinch-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Reset cards for mobile */
+    .zinch-card {
+        position: static;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    /* ---------- ORDER CONTROL ---------- */
+
+    /* Showcase Real Work → TOP */
+    .card-left-top {
+        order: 1;
+    }
+
+    /* 100K+ → BELOW HEADING / ABOVE VIDEO */
+    .card-left-bottom {
+        order: 2;
+        margin-bottom: 14px;
+    }
+
+    /* Video + circles */
+    .zinch-center {
+        order: 3;
+        margin: 20px 0;
+    }
+
+    /* Bottom pill cards */
+    .card-right-top {
+        order: 4;
+    }
+
+    .card-right-middle {
+        order: 5;
+    }
+
+    .card-right-bottom {
+        order: 6;
     }
 }

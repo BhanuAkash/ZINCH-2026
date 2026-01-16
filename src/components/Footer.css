@@ -1,4 +1,4 @@
-.footer-main{
+.footer-main {
     background: url(../assets/images/footer-bg.png) center no-repeat;
 }
 
@@ -56,7 +56,7 @@
     color: #6f6bff;
 }
 
-.text-blue{
+.text-blue {
     color: #002B6B !important;
 }
 
@@ -72,4 +72,9 @@
 a {
     text-decoration: none !important;
     color: #111 !important;
+}
+
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
 }

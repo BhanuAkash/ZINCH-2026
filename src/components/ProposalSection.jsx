@@ -12,7 +12,7 @@ export default function ProposalSection() {
 
                     {/* Left Image */}
                     <motion.div
-                        className="col-lg-6 text-center"
+                        className="col-lg-7 my-0"
                         initial={{ opacity: 0, scale: 0.94, x: 40 }}
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
@@ -33,7 +33,7 @@ export default function ProposalSection() {
 
                     {/* Right Content */}
                     <motion.div
-                        className="col-lg-6"
+                        className="col-lg-5 text-center text-lg-start"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
@@ -43,15 +43,12 @@ export default function ProposalSection() {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        <motion.h2
-                            className="fw-bold mb-3"
+                        <motion.h2 className="fw-bold display-6 mb-3"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
                         >
-                            The complete journey of <br />
-                            turning a project proposal <br />
-                            into a shared solution
+                            Where Proposals Grow Up into Products
                         </motion.h2>
 
                         <motion.p

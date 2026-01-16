@@ -20,3 +20,9 @@
 .avatar-stack img:first-child {
     margin-left: 0;
 }
+
+@media (max-width: 576px) {
+    .text-sm-12 {
+        font-size: 12px !important;
+    }
+}

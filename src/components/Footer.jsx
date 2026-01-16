@@ -24,121 +24,105 @@ export default function Footer() {
                 <CareerCTA />
 
                 {/* Footer Section */}
-                <footer className="footer-section">
+                {/* Footer Section */}
+                <footer className="footer-section py-5">
                     <div className="container">
-                        <div className="row gy-4">
+                        <div className="row gy-5">
 
-                            {/* Logo & Contact */}
-                            <motion.div
-                                className="col-lg-4 col-md-6"
-                                initial={fade.initial}
-                                whileInView={fade.animate}
-                                viewport={{ once: false }}
-                                transition={{ duration: 0.6 }}
-                            >
-                                <img src={logo} alt="Zinch" className="footer-logo mb-3" />
+                            {/* Brand + Contact Info */}
+                            <div className="col-lg-4 col-md-6">
+                                <img
+                                    src={logo}
+                                    alt="Zinch Logo"
+                                    className="footer-logo mb-4"
+                                    style={{ maxHeight: '60px', width: 'auto' }}
+                                />
 
-                                <p className="footer-text">
-                                    <strong>Corporate Head Office:</strong> 3787 Jerry Dove Drive, Florence,
-                                    South Carolina, 29501, United States.
+                                <h6 className="fw-bold mb-3">Corporate Head Office</h6>
+                                <p className="text-secondary mb-2">
+                                    3787 Jerry Dove Drive, Florence,<br />
+                                    South Carolina, 29501, United States
                                 </p>
-                                <div className="mt-3">
 
-                                    <p className="footer-text">
-                                        <strong>Phone:</strong> <a href="tel:8434967759">843-496-7759</a>
+                                <div className="mt-4">
+                                    <p className="mb-2">
+                                        <strong>Phone:</strong> <a href="tel:+18434967759" className="text-light text-decoration-none">843-496-7759</a>
                                     </p>
-
-                                    <p className="footer-text">
-                                        <strong>Fax:</strong> <a href="#">02-222264303</a>
+                                    <p className="mb-2">
+                                        <strong>Fax:</strong> <span className="text-secondary">02-222264303</span>
                                     </p>
-
-                                    <p className="footer-text">
-                                        <strong>Email:</strong> <a href="mailto:info@mastershub.com">info@mastershub.com</a>
+                                    <p className="mb-0">
+                                        <strong>Email:</strong> <a href="mailto:info@mastershub.com" className="text-light text-decoration-none">info@mastershub.com</a>
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
 
-                            {/* Footer columns */}
-                            {[
-                                {
-                                    title: "Quick Links",
-                                    links: [
-                                        { label: "About Us", url: "/about" },
-                                        { label: "Watch Technical", url: "/technical" },
-                                        { label: "Videos", url: "/videos" },
-                                        { label: "Explore Projects", url: "/projects" },
-                                        { label: "Discover Creators", url: "/creators" },
-                                        { label: "Trending Content", url: "/trending" }
-                                    ]
-                                },
-                                {
-                                    title: "For Creators",
-                                    links: [
-                                        { label: "Join as Creator", url: "/join-creator" },
-                                        { label: "Share Your Work", url: "/share-work" },
-                                        { label: "Collaborate on Projects", url: "/collaborate" },
-                                        { label: "Creator Guidelines", url: "/creator-guidelines" }
-                                    ]
-                                },
-                                {
-                                    title: "Support",
-                                    links: [
-                                        { label: "Help Center", url: "/help" },
-                                        { label: "Community Rules", url: "/community-rules" },
-                                        { label: "Contact Us", url: "/contact" },
-                                        { label: "FAQs", url: "/faqs" }
-                                    ]
-                                },
-                                {
-                                    title: "Legal",
-                                    links: [
-                                        { label: "Privacy Policy", url: "/privacy-policy" },
-                                        { label: "Terms & Conditions", url: "/terms" },
-                                        { label: "Cookie Policy", url: "/cookies" }
-                                    ]
-                                }
-                            ].map((col, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="col-lg-2 col-md-6"
-                                    initial={fade.initial}
-                                    whileInView={fade.animate}
-                                    viewport={{ once: false }}
-                                    transition={{ duration: 0.6, delay: 0.2 }}
-                                >
-                                    <h6 className="footer-title">{col.title}</h6>
+                            {/* Quick Links */}
+                            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <h6 className="footer-title fw-bold mb-4">Quick Links</h6>
+                                <ul className="list-unstyled footer-links">
+                                    <li className="mb-2"><a href="/about">About Us</a></li>
+                                    <li className="mb-2"><a href="/technical">Watch Technical</a></li>
+                                    <li className="mb-2"><a href="/videos">Videos</a></li>
+                                    <li className="mb-2"><a href="/projects">Explore Projects</a></li>
+                                    <li><a href="/creators">Discover Creators</a></li>
+                                </ul>
+                            </div>
 
-                                    <ul className="footer-links">
-                                        {col.links.map((link, idx) => (
-                                            <li key={idx} className="mb-2">
-                                                <a href={link.url}>{link.label}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            ))}
+                            {/* For Creators */}
+                            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <h6 className="footer-title fw-bold mb-4">For Creators</h6>
+                                <ul className="list-unstyled footer-links">
+                                    <li className="mb-2"><a href="/join-creator">Join as Creator</a></li>
+                                    <li className="mb-2"><a href="/share-work">Share Your Work</a></li>
+                                    <li className="mb-2"><a href="/collaborate">Collaborate on Projects</a></li>
+                                    <li><a href="/creator-guidelines">Creator Guidelines</a></li>
+                                </ul>
+                            </div>
+
+                            {/* Support */}
+                            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <h6 className="footer-title fw-bold mb-4">Support</h6>
+                                <ul className="list-unstyled footer-links">
+                                    <li className="mb-2"><a href="/help">Help Center</a></li>
+                                    <li className="mb-2"><a href="/community-rules">Community Rules</a></li>
+                                    <li className="mb-2"><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
+                                </ul>
+                            </div>
+
+                            {/* Legal */}
+                            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
+                                <h6 className="footer-title fw-bold mb-4">Legal</h6>
+                                <ul className="list-unstyled footer-links">
+                                    <li className="mb-2"><a href="/privacy-policy">Privacy Policy</a></li>
+                                    <li className="mb-2"><a href="/terms">Terms & Conditions</a></li>
+                                    <li><a href="/cookies">Cookie Policy</a></li>
+                                </ul>
+                            </div>
+
                         </div>
 
                         {/* Bottom Bar */}
-                        <motion.div
-                            className="footer-bottom d-flex justify-content-between align-items-center mt-4"
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false }}
-                            transition={{ delay: 0.35 }}
-                        >
-                            <p className="mb-0 text-blue ">©2026 All rights reserved</p>
+                        <div className="footer-bottom mt-5 pt-4 border-top border-secondary">
+                            <div className="row align-items-center">
+                                <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                    <small>© {new Date().getFullYear()} Zinch. All rights reserved.</small>
+                                </div>
 
-                            <div className="social-icons">
-                                <motion.a whileHover={{ scale: 1.2 }} href="#"><FaInstagram /></motion.a>
-                                <motion.a whileHover={{ scale: 1.2 }} href="#"><FaTelegramPlane /></motion.a>
-                                <motion.a whileHover={{ scale: 1.2 }} href="#"><FaTiktok /></motion.a>
-                                <motion.a whileHover={{ scale: 1.2 }} href="#"><FaYoutube /></motion.a>
+                                <div className="col-md-6">
+                                    <div className="social-icons d-flex justify-content-center justify-content-md-end gap-4">
+                                        <a href="#" className="text-light fs-5 hover-lift"><FaInstagram /></a>
+                                        <a href="#" className="text-light fs-5 hover-lift"><FaTelegramPlane /></a>
+                                        <a href="#" className="text-light fs-5 hover-lift"><FaTiktok /></a>
+                                        <a href="#" className="text-light fs-5 hover-lift"><FaYoutube /></a>
+                                    </div>
+                                </div>
                             </div>
-                        </motion.div>
-
+                        </div>
                     </div>
                 </footer>
+
             </div>
 
         </>

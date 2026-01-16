@@ -6,7 +6,7 @@ export default function CareerCTA() {
     return (
         <section className="container my-5">
             <motion.div
-                className="cta-wrapper row align-items-center justify-content-center"
+                className="cta-wrapper row align-items-center justify-content-center mx-md-0 mx-4"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -16,7 +16,7 @@ export default function CareerCTA() {
                 }}
             >
 
-                <div className="col-lg-7 ">
+                <div className="col-lg-7 text-center text-lg-start">
                     <motion.h2
                         className="cta-title display-6"
                         initial={{ opacity: 0, y: 20 }}

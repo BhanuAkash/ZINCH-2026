@@ -6,6 +6,7 @@ import Logo from "../assets/logos/logo.png";
 import Rocket from "../assets/icons/rocket-01.png";
 import PlayButton from "../assets/icons/play-circle.png";
 import HeroShape from "../assets/shapes/shape-1.png";
+import './HeroSection.css'
 
 const title = "From Idea to Impact";
 
@@ -26,7 +27,7 @@ const letter = {
 
 export default function HeroSection() {
     return (
-        <section className="py-5 overflow-hidden position-relative">
+        <section className="py-lg-5 py-2 overflow-hidden position-relative">
             {/* Decorative shape */}
             <motion.img
                 src={HeroShape}
@@ -40,11 +41,11 @@ export default function HeroSection() {
             <div className="container">
 
                 {/* Logo */}
-                <Link className="navbar-brand fw-bold" to="/">
+                <Link className="navbar-brand fw-bold d-flex justify-content-lg-start justify-content-center" to="/">
                     <img
                         src={Logo}
                         alt="Logo"
-                        className="img-fluid"
+                        className="img-fluid my-lg-0 my-3"
                         style={{ width: "140px" }}
                     />
                 </Link>
@@ -83,27 +84,27 @@ export default function HeroSection() {
 
                         {/* Buttons */}
                         <motion.div
-                            className="d-flex gap-3 justify-content-center justify-content-lg-start"
+                            className="d-flex gap-3 justify-content-center justify-content-lg-start d-lg-block d-none"
                             initial={{ opacity: 0, y: 25 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.5 }}
                             transition={{ delay: 0.6, duration: 0.6 }}
                         >
                             <motion.button
-                                className="btn btn-violet rounded-pill fw-bold px-4"
+                                className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <img src={Rocket} className="me-2" style={{ width: "30px" }} alt="" />
+                                <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
                                 Launch your idea
                             </motion.button>
 
                             <motion.button
-                                className="btn gradient-border-btn rounded-pill fw-bold px-4"
+                                className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <img src={PlayButton} className="me-2" style={{ width: "30px" }} alt="" />
+                                <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
                                 See how it works
                             </motion.button>
                         </motion.div>
@@ -111,9 +112,7 @@ export default function HeroSection() {
                     </div>
 
                     {/* RIGHT SIDE */}
-                    <div className="col-lg-6 position-relative">
-
-
+                    <div className="col-lg-6 position-relative my-lg-3 my-0">
 
                         <div className="hero-image-center">
 
@@ -137,9 +136,36 @@ export default function HeroSection() {
                                 transition={{ delay: 0.3 }}
                             />
                         </div>
+                        {/* Buttons */}
+                        <motion.div
+                            className="d-flex gap-3 justify-content-center justify-content-lg-start d-block d-lg-none mt-3"
+                            initial={{ opacity: 0, y: 25 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false, amount: 0.5 }}
+                            transition={{ delay: 0.6, duration: 0.6 }}
+                        >
+                            <motion.button
+                                className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
+                                whileHover={{ scale: 1.08 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                Launch your idea
+                            </motion.button>
+
+                            <motion.button
+                                className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
+                                whileHover={{ scale: 1.08 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                See how it works
+                            </motion.button>
+                        </motion.div>
 
                     </div>
                 </div>
+
 
                 <BrandSlider />
             </div>

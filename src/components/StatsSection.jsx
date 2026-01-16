@@ -59,77 +59,92 @@ export default function StatsSection() {
                         <div className="row text-center text-lg-start">
 
                             <motion.div
-                                className="col-md-4"
+                                className="col-4"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1">
+                                <h2 className="fw-semi-bold display-6 mb-1 text-center">
                                     {contributors.toLocaleString()}+
                                 </h2>
-                                <p className="text-muted mb-0">Contributors</p>
+                                <p className="text-muted text-sm-12 mb-0 text-center">Contributors</p>
                             </motion.div>
 
                             <motion.div
-                                className="col-md-4"
+                                className="col-4"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1">
+                                <h2 className="fw-semi-bold display-6 mb-1 text-center">
                                     {docs.toLocaleString()}+
                                 </h2>
-                                <p className="text-muted mb-0">Proposal Docs</p>
+                                <p className="text-muted text-sm-12 mb-0 text-center">Proposal Docs</p>
                             </motion.div>
 
                             <motion.div
-                                className="col-md-4"
+                                className="col-4"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1">
+                                <h2 className="fw-semi-bold display-6 mb-1 text-center">
                                     {projects.toLocaleString()}+
                                 </h2>
-                                <p className="text-muted mb-0">Projects Shipped</p>
+                                <p className="text-muted text-sm-12 mb-0 text-center">Projects Shipped</p>
                             </motion.div>
 
                         </div>
                     </div>
 
                     {/* RIGHT LIVE ACTIVITY */}
-                    <div className="col-lg-5 d-flex justify-content-center">
+                    <div className="col-lg-5">
                         <motion.div
-                            className="live-pill d-flex align-items-center gap-3"
+                            className="live-pill"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ amount: 0.6 }}
                         >
-                            <div className="small">
-                                SarahDev just committed<br />
-                                code to Open-Source CRM
-                            </div>
-                            <div className="avatar-stack">
-                                <img src={Avatar1} alt="user" />
-                                <img src={Avatar2} alt="user" />
-                                <img src={Avatar3} alt="user" />
-                            </div>
+                            <div className="row align-items-center text-center text-lg-start gy-3">
 
-                            <motion.button
-                                className="btn btn-main rounded-pill px-4 py-3"
-                                whileHover={{ scale: 1.08 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <img
-                                    src={PlayButton}
-                                    className="img-fluid me-2"
-                                    alt=""
-                                    style={{ width: "20px", height: "auto" }}
-                                />
-                                Live Now
-                            </motion.button>
+                                {/* Text */}
+                                <div className="col-md-5 col-12">
+                                    <div className="small">
+                                        SarahDev just committed <br />
+                                        code to Open-Source CRM
+                                    </div>
+                                </div>
+
+                                {/* Avatars */}
+                                <div className="col-md-3 col-6 d-flex justify-content-center justify-content-lg-start">
+                                    <div className="avatar-stack">
+                                        <img src={Avatar1} alt="user" />
+                                        <img src={Avatar2} alt="user" />
+                                        <img src={Avatar3} alt="user" />
+                                    </div>
+                                </div>
+
+                                {/* Button */}
+                                <div className="col-md-4 col-6 d-flex justify-content-center justify-content-lg-end">
+                                    <motion.button
+                                        className="btn btn-main rounded-pill px-4 py-3 w-100 w-lg-auto"
+                                        whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <img
+                                            src={PlayButton}
+                                            className="me-2"
+                                            alt=""
+                                            style={{ width: "20px" }}
+                                        />
+                                        Live Now
+                                    </motion.button>
+                                </div>
+
+                            </div>
                         </motion.div>
                     </div>
+
 
                 </div>
             </div>
