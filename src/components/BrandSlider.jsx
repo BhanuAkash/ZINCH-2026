@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import "./BrandSlider.css";
 
-import Google from "../assets/logos/logo.png";
-import Slack from "../assets/logos/logo.png";
-import Heroku from "../assets/logos/logo.png";
-import Agworld from "../assets/logos/logo.png";
-import Riotinto from "../assets/logos/logo.png";
+import Google from "../assets/logos/brands/slider-1.png";
+import Slack from "../assets/logos/brands/slider-2.png";
+import Heroku from "../assets/logos/brands/slider-3.png";
+import Agworld from "../assets/logos/brands/slider-4.png";
+import Riotinto from "../assets/logos/brands/slider-5.png";
 
 const brands = [Google, Slack, Heroku, Agworld, Riotinto];
 

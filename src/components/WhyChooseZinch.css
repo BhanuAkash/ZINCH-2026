@@ -64,7 +64,7 @@
 
 .video-label {
     position: absolute;
-    bottom: 90px;
+    bottom: 5px !important;
     left: 50%;
     transform: translateX(-50%);
     padding: 4px 12px;
@@ -318,7 +318,7 @@
     /* ----------------------------- */
 
     .curvy-arrow {
-        width: 35px;
+        width: 45px;
         display: block;
         opacity: 0.9;
     }
