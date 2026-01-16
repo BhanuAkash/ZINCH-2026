@@ -32,7 +32,7 @@ export default function HeroSection() {
             <motion.img
                 src={HeroShape}
                 alt="Shape"
-                className="hero-page-shape-img"
+                className="hero-page-shape-img d-lg-block d-none"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: false }}
@@ -145,7 +145,7 @@ export default function HeroSection() {
                             transition={{ delay: 0.6, duration: 0.6 }}
                         >
                             <motion.button
-                                className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
+                                className="btn btn-violet rounded-pill fw-bold px-md-4 px-2 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -154,7 +154,7 @@ export default function HeroSection() {
                             </motion.button>
 
                             <motion.button
-                                className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
+                                className="btn gradient-border-btn rounded-pill fw-bold px-md-4 px-2 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -164,8 +164,17 @@ export default function HeroSection() {
                         </motion.div>
 
                     </div>
-                </div>
 
+                </div>
+                <motion.img
+                    src={HeroShape}
+                    alt="Shape"
+                    className="hero-page-shape-img d-lg-none d-block"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 1 }}
+                />
 
                 <BrandSlider />
             </div>

@@ -128,9 +128,9 @@ textarea {
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 991px) {
   .hero-page-shape-img {
-    width: 360px;
+    /* width: 360px; */
     top: -90px;
-    right: -90px;
+    right: -203px;
   }
 
   .hero-image-bg {
