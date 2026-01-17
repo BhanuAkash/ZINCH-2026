@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import JourneyImg from "../assets/images/proposal-img.png"; // 👈 your right image
 import "./JourneySection.css";
-
+import { useNavigate } from "react-router-dom";
 
 export default function ProposalSection() {
+    const navigate = useNavigate();
+
     return (
         <section className="py-5 journey-section overflow-hidden">
             <div className="container">
@@ -67,6 +69,7 @@ export default function ProposalSection() {
                             whileHover={{ scale: 1.08, boxShadow: "0px 10px 30px rgba(0,0,0,0.15)" }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            onClick={() => navigate("/contact")}
                         >
                             Let's Get Started
                         </motion.button>

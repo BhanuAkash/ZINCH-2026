@@ -7,6 +7,8 @@ import Rocket from "../assets/icons/rocket-01.png";
 import PlayButton from "../assets/icons/play-circle.png";
 import HeroShape from "../assets/shapes/shape-1.png";
 import './HeroSection.css'
+import { useNavigate } from "react-router-dom";
+
 
 const title = "From Idea to Impact";
 
@@ -26,6 +28,9 @@ const letter = {
 };
 
 export default function HeroSection() {
+    const navigate = useNavigate();
+
+
     return (
         <section className="py-lg-5 py-2 overflow-hidden position-relative">
             {/* Decorative shape */}
@@ -81,8 +86,7 @@ export default function HeroSection() {
                             The open collaboration platform where 1,200+ visionaries
                             turn raw ideas into launched software.
                         </motion.p>
-                        <div className=" d-lg-block d-none">
-                            {/* Buttons */}
+                        <div className="d-lg-block d-none">
                             <motion.div
                                 className="d-flex gap-3 justify-content-center justify-content-lg-start"
                                 initial={{ opacity: 0, y: 25 }}
@@ -90,26 +94,39 @@ export default function HeroSection() {
                                 viewport={{ once: false, amount: 0.5 }}
                                 transition={{ delay: 0.6, duration: 0.6 }}
                             >
+                                {/* Launch Button */}
                                 <motion.button
                                     className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.95 }}
+                                    onClick={() => navigate("/contact")}
                                 >
-                                    <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                    <img
+                                        src={Rocket}
+                                        className="me-2 w-sm-20"
+                                        style={{ width: "30px" }}
+                                        alt=""
+                                    />
                                     Launch your idea
                                 </motion.button>
 
+                                {/* See How It Works Button */}
                                 <motion.button
                                     className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.95 }}
+                                    onClick={() => navigate("/contact")}
                                 >
-                                    <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                    <img
+                                        src={PlayButton}
+                                        className="me-2 w-sm-20"
+                                        style={{ width: "30px" }}
+                                        alt=""
+                                    />
                                     See how it works
                                 </motion.button>
                             </motion.div>
                         </div>
-
 
                     </div>
 
@@ -146,25 +163,38 @@ export default function HeroSection() {
                             viewport={{ once: false, amount: 0.5 }}
                             transition={{ delay: 0.6, duration: 0.6 }}
                         >
+                            {/* Launch Button */}
                             <motion.button
                                 className="btn btn-violet rounded-pill fw-bold px-md-4 px-2 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={() => navigate("/contact")}
                             >
-                                <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                <img
+                                    src={Rocket}
+                                    className="me-2 w-sm-20"
+                                    style={{ width: "30px" }}
+                                    alt=""
+                                />
                                 Launch your idea
                             </motion.button>
 
+                            {/* See How It Works Button */}
                             <motion.button
                                 className="btn gradient-border-btn rounded-pill fw-bold px-md-4 px-2 responsive-btn"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
+                                onClick={() => navigate("/contact")}
                             >
-                                <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                <img
+                                    src={PlayButton}
+                                    className="me-2 w-sm-20"
+                                    style={{ width: "30px" }}
+                                    alt=""
+                                />
                                 See how it works
                             </motion.button>
-                        </motion.div>
-
+                        </motion.div>   
                     </div>
 
                 </div>

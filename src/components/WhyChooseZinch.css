@@ -4,6 +4,8 @@
 
 .why-zinch-section {
     background: #fafbff;
+    padding: 80px 0;
+    overflow: visible;
 }
 
 /* ============================= */
@@ -12,8 +14,8 @@
 
 .zinch-wrapper {
     position: relative;
-    max-width: 900px;
-    height: 600px;
+    max-width: 1100px; /* increased */
+    height: 700px;     /* increased */
     margin: 0 auto;
 }
 
@@ -28,6 +30,7 @@
     align-items: center;
     justify-content: center;
     pointer-events: auto;
+    z-index: 3;
 }
 
 /* ============================= */
@@ -35,9 +38,9 @@
 /* ============================= */
 
 .video-card-wrapper {
-    width: 230px;
-    height: 420px;
-    z-index: 3;
+    width: 280px;
+    height: 440px;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -45,15 +48,10 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 24px;
+    border-radius: 26px;
     overflow: hidden;
     background: #000;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease;
-}
-
-.video-card-wrapper:hover .video-card {
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
 }
 
 .video-element {
@@ -64,13 +62,13 @@
 
 .video-label {
     position: absolute;
-    bottom: 5px !important;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 4px 12px;
+    padding: 5px 14px;
     font-size: 12px;
     color: #fff;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 20px;
 }
 
@@ -87,22 +85,23 @@
     transform: translate(-50%, -50%);
     animation: pulse 6s linear infinite;
     pointer-events: none;
+    z-index: 1;
 }
 
 .circle-1 {
-    width: 300px;
-    height: 300px;
+    width: 360px;
+    height: 360px;
 }
 
 .circle-2 {
-    width: 380px;
-    height: 380px;
+    width: 460px;
+    height: 460px;
     animation-delay: 1s;
 }
 
 .circle-3 {
-    width: 460px;
-    height: 460px;
+    width: 560px;
+    height: 560px;
     animation-delay: 2s;
 }
 
@@ -110,11 +109,9 @@
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
-
     50% {
-        transform: translate(-50%, -50%) scale(1.05);
+        transform: translate(-50%, -50%) scale(1.04);
     }
-
     100% {
         transform: translate(-50%, -50%) scale(1);
     }
@@ -126,20 +123,21 @@
 
 .curvy-arrow {
     position: absolute;
-    width: 80px;
+    width: 90px;
     pointer-events: none;
+    z-index: 5;
 }
 
 .arrow-1 {
-    top: 45%;
-    left: 50%;
-    transform: translate(140px, -180px) rotate(-30deg);
+    top: 50%;
+    left: 45%;
+    transform: translate(230px, -250px) rotate(-30deg);
 }
 
 .arrow-2 {
     top: 40%;
-    left: 40%;
-    transform: translate(-160px, 180px);
+    left: 50%;
+    transform: translate(-260px, 240px);
 }
 
 /* ============================= */
@@ -148,17 +146,13 @@
 
 .zinch-card {
     position: absolute;
-    width: 260px;
+    width: 270px;
     background: #fff;
-    border-radius: 18px;
-    padding: 16px 18px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 18px 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.zinch-card.active {
-    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
+    z-index: 6;
 }
 
 .card-inner {
@@ -171,7 +165,7 @@
 }
 
 .card-content h6 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 4px;
 }
@@ -179,43 +173,44 @@
 .card-content p {
     font-size: 0.8rem;
     color: #6c757d;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 /* ============================= */
-/* CARD POSITIONS */
+/* CARD POSITIONS (ATTACHED TO CIRCLES) */
 /* ============================= */
 
 .card-left-top {
-    left: -40px;
+    left: 0;
     top: 150px;
 }
 
 .card-left-bottom {
-    left: -40px;
-    top: 310px;
+    left: 0;
+    top: 330px;
 }
 
 .card-right-top {
-    right: -40px;
-    top: 120px;
+    right: 0;
+    top: 140px;
 }
 
 .card-right-middle {
-    right: -40px;
-    top: 250px;
+    right: 0;
+    top: 290px;
 }
 
 .card-right-bottom {
-    right: -40px;
-    top: 380px;
+    right: 0;
+    top: 440px;
 }
 
 /* ============================= */
-/* RESPONSIVE (md & sm) */
+/* RESPONSIVE (TABLET) */
 /* ============================= */
 
 @media (max-width: 992px) {
+
     .zinch-wrapper {
         height: auto;
     }
@@ -225,160 +220,25 @@
         margin-bottom: 2rem;
     }
 
-    /* Keep circles visible but scale down */
-    .circle-1 {
-        width: 220px;
-        height: 220px;
-    }
-
-    .circle-2 {
-        width: 280px;
-        height: 280px;
-    }
-
-    .circle-3 {
-        width: 340px;
-        height: 340px;
-    }
-
     .video-circle {
         opacity: 0.6;
     }
 
-    /* Hide arrows only */
     .curvy-arrow {
         display: none;
     }
 
     .zinch-card {
         position: static;
+        width: 100%;
+        max-width: 340px;
         margin: 12px auto;
-        width: 100%;
-        max-width: 320px;
     }
 }
 
 /* ============================= */
-/* MOBILE EXACT DESIGN (<=768px) */
+/* MOBILE (<=768px) */
 /* ============================= */
-
-@media (max-width: 768px) {
-
-    .zinch-wrapper {
-        height: auto;
-        max-width: 360px;
-        padding-bottom: 20px;
-    }
-
-    .zinch-center {
-        position: relative;
-        margin-bottom: 1.5rem;
-    }
-
-    /* ----------------------------- */
-    /* VIDEO CARD */
-    /* ----------------------------- */
-
-    .video-card-wrapper {
-        width: 180px;
-        height: 320px;
-    }
-
-    .video-label {
-        bottom: 70px;
-        font-size: 11px;
-    }
-
-    /* ----------------------------- */
-    /* CIRCLES (MATCH IMAGE) */
-    /* ----------------------------- */
-
-    .circle-1 {
-        width: 220px;
-        height: 220px;
-    }
-
-    .circle-2 {
-        width: 270px;
-        height: 270px;
-    }
-
-    .circle-3 {
-        width: 320px;
-        height: 320px;
-    }
-
-    .video-circle {
-        border-color: rgba(120, 90, 255, 0.4);
-        opacity: 0.9;
-    }
-
-    /* ----------------------------- */
-    /* ARROWS (VISIBLE ON MOBILE) */
-    /* ----------------------------- */
-
-    .curvy-arrow {
-        width: 45px;
-        display: block;
-        opacity: 0.9;
-    }
-
-    .arrow-1 {
-        top: 45%;
-        left: 50%;
-        transform: translate(95px, -110px) rotate(-10deg);
-    }
-
-    .arrow-2 {
-        top: 45%;
-        left: 45%;
-        transform: translate(-115px, 95px) rotate(0deg);
-    }
-
-    /* ----------------------------- */
-    /* CARDS → STACKED PILLS */
-    /* ----------------------------- */
-
-    .zinch-card {
-        position: static;
-        width: 100%;
-        max-width: 300px;
-        margin: 10px auto;
-        border-radius: 14px;
-        padding: 12px 14px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .card-inner {
-        align-items: center;
-        gap: 12px;
-    }
-
-    .card-icon img {
-        width: 30px;
-    }
-
-    .card-content h6 {
-        font-size: 0.85rem;
-    }
-
-    .card-content p {
-        font-size: 0.75rem;
-        margin-bottom: 0;
-    }
-
-    /* ----------------------------- */
-    /* BUTTON (HIDDEN ON MOBILE) */
-    /* ----------------------------- */
-
-    /* .zinch-card button {
-        display: none;
-    } */
-}
-
-/* ========================================= */
-/* MOBILE CARD ORDER FIX */
-/* ========================================= */
 
 @media (max-width: 768px) {
 
@@ -386,9 +246,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 360px;
+        height: auto;
     }
 
-    /* Reset cards for mobile */
+    .video-card-wrapper {
+        width: 190px;
+        height: 340px;
+    }
+
+    .circle-1 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .circle-2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .circle-3 {
+        width: 360px;
+        height: 360px;
+    }
+
+    .curvy-arrow {
+        width: 50px;
+        display: block;
+    }
+
+    .arrow-1 {
+        transform: translate(120px, -140px);
+    }
+
+    .arrow-2 {
+        transform: translate(-140px, 120px);
+    }
+
     .zinch-card {
         position: static;
         width: 100%;
@@ -396,35 +290,12 @@
         margin: 10px auto;
     }
 
-    /* ---------- ORDER CONTROL ---------- */
+    /* ORDER */
 
-    /* Showcase Real Work → TOP */
-    .card-left-top {
-        order: 1;
-    }
-
-    /* 100K+ → BELOW HEADING / ABOVE VIDEO */
-    .card-left-bottom {
-        order: 2;
-        margin-bottom: 14px;
-    }
-
-    /* Video + circles */
-    .zinch-center {
-        order: 3;
-        margin: 20px 0;
-    }
-
-    /* Bottom pill cards */
-    .card-right-top {
-        order: 4;
-    }
-
-    .card-right-middle {
-        order: 5;
-    }
-
-    .card-right-bottom {
-        order: 6;
-    }
+    .card-left-top { order: 1; }
+    .card-left-bottom { order: 2; }
+    .zinch-center { order: 3; margin: 20px 0; }
+    .card-right-top { order: 4; }
+    .card-right-middle { order: 5; }
+    .card-right-bottom { order: 6; }
 }

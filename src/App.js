@@ -5,9 +5,13 @@ import Contact from './pages/Contact'
 import NotFound from "./pages/NotFound";
 
 import Navbar from "./components/Navbar";
+
+
 import './App.css'
 
 function App() {
+  
+
   return (
     <BrowserRouter>
       {/* <Navbar /> */}

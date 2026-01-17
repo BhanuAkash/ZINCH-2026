@@ -156,7 +156,7 @@ export default function WhyChooseZinch() {
 
                                         {isActive && card.button && (
                                             <motion.button
-                                                className="btn btn-violet rounded-pill btn-sm"
+                                                className="btn btn-violet rounded-pill btn-sm mt-2"
                                                 initial={{ opacity: 0, y: 8 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ duration: 0.3 }}

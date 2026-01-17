@@ -5,9 +5,11 @@ import Avatar2 from "../assets/images/testimonials/Ellipse 5.png";
 import Avatar3 from "../assets/images/testimonials/Ellipse 6.png";
 import './StatsSection.css'
 import PlayButton from '../assets/icons/Frame.png'
+import { useNavigate } from "react-router-dom";
 
 
 export default function StatsSection() {
+    const navigate = useNavigate();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { margin: "-100px" });
 
@@ -55,7 +57,7 @@ export default function StatsSection() {
                 <div className="row align-items-center g-4">
 
                     {/* LEFT STATS */}
-                    <div className="col-lg-7">
+                    <div className="col-lg-6">
                         <div className="row text-center text-lg-start">
 
                             <motion.div
@@ -98,25 +100,25 @@ export default function StatsSection() {
                     </div>
 
                     {/* RIGHT LIVE ACTIVITY */}
-                    <div className="col-lg-5">
+                    <div className="col-lg-6">
                         <motion.div
                             className="live-pill"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ amount: 0.6 }}
                         >
-                            <div className="row align-items-center text-center text-lg-start gy-3">
+                            <div className="row align-items-center text-center text-lg-start g-3">
 
                                 {/* Text */}
                                 <div className="col-md-5 col-12">
-                                    <div className="small">
+                                    <div className="">
                                         SarahDev just committed <br />
                                         code to Open-Source CRM
                                     </div>
                                 </div>
 
                                 {/* Avatars */}
-                                <div className="col-md-3 col-6 d-flex justify-content-center justify-content-lg-start">
+                                <div className="col-md-4 col-6 d-flex justify-content-center">
                                     <div className="avatar-stack">
                                         <img src={Avatar1} alt="user" />
                                         <img src={Avatar2} alt="user" />
@@ -125,11 +127,25 @@ export default function StatsSection() {
                                 </div>
 
                                 {/* Button */}
-                                <div className="col-md-4 col-6 d-flex justify-content-center justify-content-lg-end">
+                                <div className="col-md-3 col-6 d-flex justify-content-center justify-content-lg-end">
                                     <motion.button
-                                        className="btn btn-main rounded-pill px-4 py-3 w-100 w-lg-auto"
+                                        className="btn btn-main rounded-pill px-3 py-2 w-100 w-lg-auto"
                                         whileHover={{ scale: 1.08 }}
                                         whileTap={{ scale: 0.95 }}
+                                        animate={{
+                                            scale: [1, 1.08, 1],
+                                            boxShadow: [
+                                                "0 0 0 rgba(111,107,255,0.4)",
+                                                "0 0 18px rgba(111,107,255,0.55)",
+                                                "0 0 0 rgba(111,107,255,0.4)",
+                                            ],
+                                        }}
+                                        transition={{
+                                            duration: 1.8,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
+                                        }}
+                                        onClick={() => navigate("/contact")}
                                     >
                                         <img
                                             src={PlayButton}
@@ -139,6 +155,7 @@ export default function StatsSection() {
                                         />
                                         Live Now
                                     </motion.button>
+
                                 </div>
 
                             </div>

@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import bg from "../assets/shapes/shape-1.png"; // put your image here
 import './CareerCTA.css'
+import { useNavigate } from "react-router-dom";
+
 
 export default function CareerCTA() {
+    const navigate = useNavigate();
+
     return (
         <section className="container my-5">
             <motion.div
@@ -18,7 +22,7 @@ export default function CareerCTA() {
 
                 <div className="col-lg-7 text-center text-lg-start">
                     <motion.h2
-                        className="cta-title display-6"
+                        className="cta-title"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
@@ -45,6 +49,7 @@ export default function CareerCTA() {
                         transition={{ delay: 0.2 }}
                         whileHover={{ scale: 1.08 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate("/contact")}
                     >
                         Let’s Get Started
                     </motion.button>

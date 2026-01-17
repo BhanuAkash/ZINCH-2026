@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaTelegramPlane, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import Insta from '../assets/icons/insta.png'
+import YouTube from '../assets/icons/you.png'
+import Arrow from '../assets/icons/arrow.png'
+import TikTok from '../assets/icons/tiktok.png'
 import logo from "../assets/logos/logo.png";
 import "./Footer.css";
 import CareerCTA from "./CareerCTA";
@@ -111,12 +116,21 @@ export default function Footer() {
                                 </div>
 
                                 <div className="col-md-6">
-                                    <div className="social-icons d-flex justify-content-center justify-content-md-end gap-4">
-                                        <a href="#" className="text-light fs-5 hover-lift"><FaInstagram /></a>
-                                        <a href="#" className="text-light fs-5 hover-lift"><FaTelegramPlane /></a>
-                                        <a href="#" className="text-light fs-5 hover-lift"><FaTiktok /></a>
-                                        <a href="#" className="text-light fs-5 hover-lift"><FaYoutube /></a>
+                                    <div className="social-icons d-flex justify-content-center justify-content-md-end gap-3">
+                                        <a href="#" className="text-light fs-5 hover-lift social-icon">
+                                            <img src={Insta} alt="" className="img-fluid w-50"/>
+                                        </a>
+                                        <a href="#" className="text-light fs-5 hover-lift">
+                                            <img src={Arrow} alt="" className="img-fluid w-50"/>
+                                        </a>
+                                        <a href="#" className="text-light fs-5 hover-lift">
+                                            <img src={TikTok} alt="" className="img-fluid w-50"/>
+                                        </a>
+                                        <a href="#" className="text-light fs-5 hover-lift">
+                                            <img src={YouTube} alt="" className="img-fluid w-50"/>
+                                        </a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

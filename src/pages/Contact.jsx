@@ -8,8 +8,12 @@ import youtubeIcon from "../assets/icons/youtube.png";
 import Navbar from "../components/Navbar";
 import Footer from '../components/Footer'
 import "./Contact.css";
+import useScrollToTop from "../components/hooks/useScrollToTop";
+
 
 export default function GetStartedSection() {
+    useScrollToTop();
+
     return (
         <>
             {/* Navbar */}
