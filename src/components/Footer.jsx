@@ -46,13 +46,13 @@ export default function Footer() {
 
                                 <div className="mt-4">
                                     <p className="mb-2">
-                                        <strong>Phone:</strong> <a href="tel:+18434967759" className="text-light text-decoration-none">843-496-7759</a>
+                                        <strong>Phone:</strong> <a href="tel:+18434967759" className="text-secondary text-decoration-none">843-496-7759</a>
                                     </p>
                                     <p className="mb-2">
                                         <strong>Fax:</strong> <span className="text-secondary">02-222264303</span>
                                     </p>
                                     <p className="mb-0">
-                                        <strong>Email:</strong> <a href="mailto:info@mastershub.com" className="text-light text-decoration-none">info@mastershub.com</a>
+                                        <strong>Email:</strong> <a href="mailto:info@mastershub.com" className="text-secondary text-decoration-none">info@mastershub.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ export default function Footer() {
                         </div>
 
                         {/* Bottom Bar */}
-                        <div className="footer-bottom mt-5 pt-4 border-top border-secondary">
+                        <div className="footer-bottom mt-5 pt-4">
                             <div className="row align-items-center">
                                 <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                                     <small>© {new Date().getFullYear()} Zinch. All rights reserved.</small>
