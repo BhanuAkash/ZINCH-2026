@@ -12,7 +12,7 @@ export default function JourneySection() {
 
                     {/* LEFT CONTENT */}
                     <motion.div
-                        className="col-lg-5 text-center text-lg-start"
+                        className="col-lg-6 text-center text-lg-start"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ amount: 0.5 }}
@@ -42,7 +42,7 @@ export default function JourneySection() {
 
                     {/* RIGHT IMAGE */}
                     <motion.div
-                        className="col-lg-7 my-0"
+                        className="col-lg-6 my-0"
                         initial={{ opacity: 0, x: 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ amount: 0.4 }}

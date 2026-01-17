@@ -72,7 +72,7 @@ export default function HeroSection() {
 
                         {/* Description */}
                         <motion.p
-                            className="text-muted mb-4"
+                            className="text-muted fs-5 mb-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.5 }}
@@ -81,33 +81,35 @@ export default function HeroSection() {
                             The open collaboration platform where 1,200+ visionaries
                             turn raw ideas into launched software.
                         </motion.p>
-
-                        {/* Buttons */}
-                        <motion.div
-                            className="d-flex gap-3 justify-content-center justify-content-lg-start d-lg-block d-none"
-                            initial={{ opacity: 0, y: 25 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.5 }}
-                            transition={{ delay: 0.6, duration: 0.6 }}
-                        >
-                            <motion.button
-                                className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
-                                whileHover={{ scale: 1.08 }}
-                                whileTap={{ scale: 0.95 }}
+                        <div className=" d-lg-block d-none">
+                            {/* Buttons */}
+                            <motion.div
+                                className="d-flex gap-3 justify-content-center justify-content-lg-start"
+                                initial={{ opacity: 0, y: 25 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.5 }}
+                                transition={{ delay: 0.6, duration: 0.6 }}
                             >
-                                <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
-                                Launch your idea
-                            </motion.button>
+                                <motion.button
+                                    className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
+                                    whileHover={{ scale: 1.08 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <img src={Rocket} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                    Launch your idea
+                                </motion.button>
 
-                            <motion.button
-                                className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
-                                whileHover={{ scale: 1.08 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
-                                See how it works
-                            </motion.button>
-                        </motion.div>
+                                <motion.button
+                                    className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
+                                    whileHover={{ scale: 1.08 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <img src={PlayButton} className="me-2 w-sm-20" style={{ width: "30px" }} alt="" />
+                                    See how it works
+                                </motion.button>
+                            </motion.div>
+                        </div>
+
 
                     </div>
 

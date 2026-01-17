@@ -12,7 +12,7 @@ export default function ProposalSection() {
 
                     {/* Left Image */}
                     <motion.div
-                        className="col-lg-7 my-0"
+                        className="col-lg-6 my-0"
                         initial={{ opacity: 0, scale: 0.94, x: 40 }}
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
@@ -33,7 +33,7 @@ export default function ProposalSection() {
 
                     {/* Right Content */}
                     <motion.div
-                        className="col-lg-5 text-center text-lg-start"
+                        className="col-lg-6 text-center text-lg-start"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
