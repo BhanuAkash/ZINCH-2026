@@ -9,7 +9,7 @@ export default function JourneySection() {
 
     return (
         <section className="py-5 journey-section overflow-hidden">
-            <div className="container">
+            <div className="container py-lg-5">
                 <div className="row align-items-center g-5">
 
                     {/* LEFT CONTENT */}
@@ -20,26 +20,26 @@ export default function JourneySection() {
                         viewport={{ amount: 0.5 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                        <h2 className="fw-bold display-6 mb-3">
+                        <h2 className="fw-medium display-6 mb-3">
                             The complete journey of
                             turning a project proposal
                             into a shared solution
                         </h2>
 
-                        <p className="text-muted mb-4">
+                        <p className="text-muted mb-4 fs-desc">
                             A collaborative platform where ideas evolve into real-world
                             solutions through structured contribution, design,
                             development, and community sharing.
                         </p>
 
                         <motion.button
-                            className="btn gradient-border-btn rounded-pill fw-bold px-4 py-2 d-lg-block d-none"
+                            className="btn gradient-border-btn rounded-pill fw-medium d-lg-block d-none"
                             whileHover={{ scale: 1.08 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => navigate("/contact")}
                         >
 
-                            Let's Get Started
+                            Contribute Now
                         </motion.button>
                     </motion.div>
 
@@ -58,7 +58,7 @@ export default function JourneySection() {
                         />
                         <div className="d-flex justify-content-center mt-4">
                             <motion.button
-                                className="btn gradient-border-btn rounded-pill fw-bold px-4 py-2 d-lg-none d-block"
+                                className="btn gradient-border-btn rounded-pill fw-medium px-4 py-2 d-lg-none d-block"
                                 whileHover={{ scale: 1.08 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => navigate("/contact")}

@@ -43,7 +43,7 @@ export default function Footer() {
                                     style={{ maxHeight: '60px', width: 'auto' }}
                                 />
 
-                                <h6 className="fw-bold mb-3">Corporate Head Office</h6>
+                                <h6 className=" mb-3">Corporate Head Office</h6>
                                 <p className="text-secondary mb-2">
                                     3787 Jerry Dove Drive, Florence,<br />
                                     South Carolina, 29501, United States

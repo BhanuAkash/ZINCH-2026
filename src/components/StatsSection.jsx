@@ -52,7 +52,7 @@ export default function StatsSection() {
     }, [isInView]);
 
     return (
-        <section ref={sectionRef} className="py-5">
+        <section ref={sectionRef} className="py-5 mb-lg-5">
             <div className="container">
                 <div className="row align-items-center g-4">
 
@@ -66,7 +66,7 @@ export default function StatsSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1 text-center">
+                                <h2 className="fw-normal display-6 mb-1 text-center">
                                     {contributors.toLocaleString()}+
                                 </h2>
                                 <p className="text-muted text-sm-12 mb-0 text-center">Contributors</p>
@@ -78,7 +78,7 @@ export default function StatsSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1 text-center">
+                                <h2 className="fw-normal display-6 mb-1 text-center">
                                     {docs.toLocaleString()}+
                                 </h2>
                                 <p className="text-muted text-sm-12 mb-0 text-center">Proposal Docs</p>
@@ -90,7 +90,7 @@ export default function StatsSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.6 }}
                             >
-                                <h2 className="fw-bold display-6 mb-1 text-center">
+                                <h2 className="fw-normal display-6 mb-1 text-center">
                                     {projects.toLocaleString()}+
                                 </h2>
                                 <p className="text-muted text-sm-12 mb-0 text-center">Projects Shipped</p>

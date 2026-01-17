@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./WhyChooseZinch.css";
 
 // video
@@ -57,42 +57,64 @@ const cards = [
 export default function WhyChooseZinch() {
     const [activeIndex, setActiveIndex] = useState(0);
     const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.muted = true; // REQUIRED for autoplay
+            videoRef.current.play()
+                .then(() => setIsPlaying(true))
+                .catch(() => {
+                    setIsPlaying(false);
+                });
+        }
+    }, []);
 
     const handleVideoClick = () => {
-        if (videoRef.current) {
-            if (isPlaying) {
-                videoRef.current.pause();
-            } else {
-                videoRef.current.play();
-            }
-            setIsPlaying(!isPlaying);
+        if (!videoRef.current) return;
+
+        if (videoRef.current.paused) {
+            videoRef.current.play();
+            setIsPlaying(true);
+        } else {
+            videoRef.current.pause();
+            setIsPlaying(false);
         }
     };
+
+
+
 
     return (
         <section className="why-zinch-section py-5">
             <div className="container text-center">
+                <div className="row align-items-center justify-content-center">
+                    <div className="col-lg-7">
+                        {/* HEADER */}
+                        <motion.h2
+                            className="fw-bold display-6 mb-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Why Choose Zinch in Me?
+                        </motion.h2>
 
-                {/* HEADER */}
-                <motion.h2
-                    className="fw-bold mb-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    Why Choose Zinch in Me?
-                </motion.h2>
+                        <motion.p
+                            className="text-muted mb-5 fs-desc"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                        >
+                            Unlock your true potential and discover a world of opportunities
+                            that align with your skills, interests, and aspirations
+                        </motion.p>
+                    </div>
+                </div>
 
-                <motion.p
-                    className="text-muted mb-5"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    Unlock your true potential and discover a world of opportunities
-                    that align with your skills, interests, and aspirations
-                </motion.p>
+
+
+
 
                 {/* MAIN WRAPPER */}
                 <div
@@ -121,12 +143,15 @@ export default function WhyChooseZinch() {
                                     ref={videoRef}
                                     src={VideoFile}
                                     loop
+                                    muted
+                                    autoPlay
                                     playsInline
                                     className="video-element"
                                 />
                                 <span className="video-label">Video Resume</span>
                             </div>
                         </motion.div>
+
                     </div>
 
                     {/* ARROWS */}

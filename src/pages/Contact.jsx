@@ -43,10 +43,12 @@ export default function GetStartedSection() {
                             viewport={{ once: false }}
                             transition={{ duration: 0.8, delay: 0.15 }}
                         >
-                            <h2 className="get-title">Get started now</h2>
-                            <p className="get-subtitle">
+                            <h2 className="get-title mb-4">Get started now!</h2>
+                            <h4 className="fs-3 mb-3"
+                            style={{color: "#7F6DE6"}}>Sign Up</h4>
+                            {/* <p className="get-subtitle">
                                 Enter your credentials to access to your account
-                            </p>
+                            </p> */}
 
                             <form className="get-form">
 
@@ -99,7 +101,7 @@ export default function GetStartedSection() {
                                     Login
                                 </button>
 
-                                <p className="get-footer">
+                                <p className="get-footer fs-desc mt-4 ps-2">
                                     Have an account? <a href="#">Sign up</a>
                                 </p>
                             </form>

@@ -9,7 +9,7 @@ export default function ProposalSection() {
 
     return (
         <section className="py-5 journey-section overflow-hidden">
-            <div className="container">
+            <div className="container pb-lg-5">
                 <div className="row align-items-center g-5">
 
                     {/* Left Image */}
@@ -45,7 +45,7 @@ export default function ProposalSection() {
                             ease: [0.16, 1, 0.3, 1]
                         }}
                     >
-                        <motion.h2 className="fw-bold display-6 mb-3"
+                        <motion.h2 className="fw-medium display-6 mb-3"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
@@ -54,7 +54,7 @@ export default function ProposalSection() {
                         </motion.h2>
 
                         <motion.p
-                            className="text-muted mb-4"
+                            className="text-muted mb-4 fs-desc"
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.35, duration: 0.6 }}
@@ -65,7 +65,7 @@ export default function ProposalSection() {
                         </motion.p>
 
                         <motion.button
-                            className="btn gradient-border-btn rounded-pill fw-bold px-4 py-2"
+                            className="btn gradient-border-btn rounded-pill fw-medium"
                             whileHover={{ scale: 1.08, boxShadow: "0px 10px 30px rgba(0,0,0,0.15)" }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}

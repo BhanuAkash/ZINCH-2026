@@ -22,7 +22,7 @@ export default function CareerCTA() {
 
                 <div className="col-lg-7 text-center text-lg-start">
                     <motion.h2
-                        className="cta-title"
+                        className="fw-medium cta-title"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}

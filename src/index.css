@@ -16,9 +16,11 @@ body,
 p,
 li,
 a,
-button,
 input,
-textarea,
-label {
-  font-family: "Syne", sans-serif !important;
+textarea {
+  /* font-family: "Syne", sans-serif !important; */
+}
+
+.fs-desc {
+  font-size: 18px;
 }

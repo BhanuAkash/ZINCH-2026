@@ -28,9 +28,8 @@ p,
 li,
 a,
 input,
-textarea,
-label {
-  font-family: "Syne", sans-serif !important;
+textarea {
+  /* font-family: "Syne", sans-serif !important; */
 }
 
 
@@ -57,7 +56,7 @@ label {
   color: #7C4EE4;
   border: none;
   z-index: 1;
-  padding: 10px 24px;
+  padding: 12px 20px !important;
 }
 
 .gradient-border-btn::before {
