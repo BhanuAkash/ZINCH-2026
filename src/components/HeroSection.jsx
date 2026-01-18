@@ -62,7 +62,7 @@ export default function HeroSection() {
 
                         {/* Animated title */}
                         <motion.h1
-                            className="display-3 fw-bold mb-3"
+                            className="display-3 fw-medium mb-3"
                             variants={container}
                             initial="hidden"
                             whileInView="show"

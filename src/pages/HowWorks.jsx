@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import PlayButton from "../assets/icons/play-circle.png";
 import Logo from "../assets/logos/logo.png";
 import Rocket from "../assets/icons/rocket-01.png";
 import HeroShape from "../assets/shapes/shape-1.png";
 import howItWorksImg from "../assets/images/how-works.png";
 import "./HowWorks.css";
+import Header from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const title = "Turn Proposals into Real-World Solutions";
@@ -62,26 +65,103 @@ const stepsData = {
     },
 };
 
+const pointsData = [
+    {
+        id: 1,
+        description: "We understand user needs and define the project scope.",
+        top: 4.5,
+        left: 27.5,
+
+        title: "1. Propose a Solution",
+        subtitle: "Have an idea that solves a real problem?",
+        desc:
+            "Submit your proposal with a clear problem statement, objectives, and expected impact.\nEvery great product starts with a strong idea.",
+    },
+    {
+        id: 2,
+        title: "Planning & Strategy",
+        description: "Roadmap creation and technical planning.",
+        bottom: 40.5,
+        left: 2,
+    },
+    {
+        id: 3,
+        title: "Development",
+        description: "Design, coding, and feature implementation.",
+        bottom: 1,
+        left: 18,
+    },
+    {
+        id: 4,
+        title: "Development",
+        description: "Design, coding, and feature implementation.",
+        bottom: 41,
+        left: 36.5,
+    },
+    {
+        id: 5,
+        title: "Development",
+        description: "Design, coding, and feature implementation.",
+        bottom: 9,
+        right: 33,
+    },
+    {
+        id: 6,
+        title: "Development",
+        description: "Design, coding, and feature implementation.",
+        bottom: 18.5,
+        right: 20,
+    },
+    {
+        id: 7,
+        title: "Development",
+        description: "Design, coding, and feature implementation.",
+        bottom: 44.5,
+        right: 10,
+    }
+];
+
+
 export default function HeroSection() {
+
+    const navigate = useNavigate();
+
+    const [activeId, setActiveId] = useState(null);
+
     const [activeStep, setActiveStep] = useState(null);
 
     const activeContent = activeStep ? stepsData[activeStep] : null;
 
     return (
         <>
+            {/* Header */}
+            <Header />
+
             {/* ======================= HERO / BANNER  ======================= */}
-            <section className="hero-section">
+            <section className="py-lg-5 py-2 how-work-hero-section d-flex align-items-center justify-content-center overflow-hidden position-relative"
+            >
+                {/* Decorative shape */}
+                <motion.img
+                    src={HeroShape}
+                    alt="Shape"
+                    className="hero-page-shape-img d-lg-block d-none"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 1 }}
+                />
                 <div className="container">
-                    {/* Logo */}
-                    <Link className="hero-logo" to="/">
-                        <img src={Logo} alt="Logo" />
-                    </Link>
+
+
 
                     <div className="row align-items-center g-5">
+
                         {/* LEFT CONTENT */}
-                        <div className="col-lg-6 text-center text-lg-start">
+                        <div className="col-lg-6 m-0 text-center text-lg-start">
+
+                            {/* Animated title */}
                             <motion.h1
-                                className="hero-title"
+                                className="display-3 fw-bold mb-3"
                                 variants={container}
                                 initial="hidden"
                                 whileInView="show"
@@ -94,49 +174,91 @@ export default function HeroSection() {
                                 ))}
                             </motion.h1>
 
+                            {/* Description */}
                             <motion.p
-                                className="hero-desc"
+                                className="text-muted fs-5 mb-4"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, amount: 0.5 }}
-                                transition={{ delay: 0.35 }}
+                                transition={{ delay: 0.4 }}
                             >
-                                We believe great solutions are built collaboratively. Our
-                                platform enables innovators, developers, and contributors to
-                                move seamlessly from ideas to execution—step by step.
+                                The open collaboration platform where 1,200+ visionaries
+                                turn raw ideas into launched software.
                             </motion.p>
-
-                            <motion.div
-                                className="hero-btn-wrap"
-                                initial={{ opacity: 0, y: 25 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.5 }}
-                                transition={{ delay: 0.55, duration: 0.6 }}
-                            >
-                                <motion.button
-                                    className="hero-btn"
-                                    whileHover={{ scale: 1.06 }}
-                                    whileTap={{ scale: 0.95 }}
+                            <div className="d-lg-block d-none">
+                                <motion.div
+                                    className="d-flex gap-3 justify-content-center justify-content-lg-start"
+                                    initial={{ opacity: 0, y: 25 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: false, amount: 0.5 }}
+                                    transition={{ delay: 0.6, duration: 0.6 }}
                                 >
-                                    <img src={Rocket} alt="" />
-                                    Launch your idea
-                                </motion.button>
-                            </motion.div>
+                                    {/* Launch Button */}
+                                    <motion.button
+                                        className="btn btn-violet rounded-pill fw-bold px-4 responsive-btn"
+                                        whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={() => navigate("/contact")}
+                                    >
+                                        <img
+                                            src={Rocket}
+                                            className="me-2 w-sm-20"
+                                            style={{ width: "30px" }}
+                                            alt=""
+                                        />
+                                        Launch your idea
+                                    </motion.button>
+
+                                    {/* See How It Works Button */}
+
+                                </motion.div>
+                            </div>
+
                         </div>
 
                         {/* RIGHT SIDE */}
-                        <div className="col-lg-6 position-relative">
-                            <motion.img
-                                src={HeroShape}
-                                alt="Shape"
-                                className="hero-shape"
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: false }}
-                                transition={{ duration: 1 }}
-                            />
+                        <div className="col-lg-6 position-relative my-lg-3 my-0">
+
+
+                            {/* Buttons */}
+                            <motion.div
+                                className="d-flex gap-3 justify-content-center justify-content-lg-start d-block d-lg-none mt-3"
+                                initial={{ opacity: 0, y: 25 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.5 }}
+                                transition={{ delay: 0.6, duration: 0.6 }}
+                            >
+                                {/* Launch Button */}
+                                <motion.button
+                                    className="btn btn-violet rounded-pill fw-bold px-md-4 px-2 responsive-btn"
+                                    whileHover={{ scale: 1.08 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    onClick={() => navigate("/contact")}
+                                >
+                                    <img
+                                        src={Rocket}
+                                        className="me-2 w-sm-20"
+                                        style={{ width: "30px" }}
+                                        alt=""
+                                    />
+                                    Launch your idea
+                                </motion.button>
+
+                                {/* See How It Works Button */}
+
+                            </motion.div>
                         </div>
+
                     </div>
+                    {/* <motion.img
+                    src={HeroShape}
+                    alt="Shape"
+                    className="hero-page-shape-img d-lg-none d-block"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 1 }}
+                /> */}
                 </div>
             </section>
 
@@ -144,7 +266,7 @@ export default function HeroSection() {
             <section className="howworks-section">
                 <div className="container">
                     <motion.h2
-                        className="howworks-title"
+                        className="howworks-title fw-medium mb-5"
                         initial={{ opacity: 0, y: 18 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -153,6 +275,64 @@ export default function HeroSection() {
                         How it Works
                     </motion.h2>
 
+                    <div className="ibp-wrapper position-relative">
+                        <img src={howItWorksImg} alt="Process Flow" className="img-fluid w-100" />
+
+                        {pointsData.map((point) => (
+                            <div
+                                key={point.id}
+                                className="ibp-pointWrap"
+                                style={{
+                                    ...(point.top !== undefined && { top: `${point.top}%` }),
+                                    ...(point.bottom !== undefined && { bottom: `${point.bottom}%` }),
+                                    ...(point.left !== undefined && { left: `${point.left}%` }),
+                                    ...(point.right !== undefined && { right: `${point.right}%` }),
+                                }}
+                                onMouseEnter={() => {
+                                    setActiveId(point.id);
+                                    setActiveStep(`step${point.id}`);
+                                }}
+                                onMouseLeave={() => {
+                                    setActiveId(null);
+                                    setActiveStep(null);
+                                }}
+                            >
+                                {/* NUMBER */}
+                                <div className="ibp-number">{point.id}</div>
+
+                                {/* BLINKING DOT */}
+                                <span className="ibp-blink" />
+
+                                {/* ✅ POPUP CARD ABOVE NUMBER */}
+                                <AnimatePresence>
+                                    {activeId === point.id && activeContent && (
+                                        <motion.div
+                                            className="howworks-popup-card"
+                                            initial={{ opacity: 0, y: 14, scale: 0.96 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 14, scale: 0.96 }}
+                                            transition={{ duration: 0.25, ease: "easeOut" }}
+                                        >
+                                            <h4 className="popup-title">{activeContent.title}</h4>
+                                            <p className="popup-subtitle">{activeContent.subtitle}</p>
+                                            <p className="popup-desc">
+                                                {activeContent.desc.split("\n").map((line, i) => (
+                                                    <span key={i}>
+                                                        {line}
+                                                        <br />
+                                                    </span>
+                                                ))}
+                                            </p>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        ))}
+
+
+
+                    </div>
+
                     <motion.div
                         className="howworks-image-wrapper"
                         initial={{ opacity: 0, scale: 0.97 }}
@@ -160,80 +340,18 @@ export default function HeroSection() {
                         transition={{ duration: 0.7 }}
                         viewport={{ once: true }}
                     >
-                        <img className="howworks-img" src={howItWorksImg} alt="How it Works" />
+
 
                         {/* ✅ Hover Layer */}
                         <div className="howworks-hover-layer">
-                            {/* STEP 1 */}
-                            <div
-                                className="howworks-hotspot step1"
-                                onMouseEnter={() => setActiveStep("step1")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
 
-                            {/* STEP 2 */}
-                            <div
-                                className="howworks-hotspot step2"
-                                onMouseEnter={() => setActiveStep("step2")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
 
-                            {/* STEP 3 */}
-                            <div
-                                className="howworks-hotspot step3"
-                                onMouseEnter={() => setActiveStep("step3")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
 
-                            {/* STEP 4 */}
-                            <div
-                                className="howworks-hotspot step4"
-                                onMouseEnter={() => setActiveStep("step4")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
-
-                            {/* STEP 5 */}
-                            <div
-                                className="howworks-hotspot step5"
-                                onMouseEnter={() => setActiveStep("step5")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
-
-                            {/* STEP 6 */}
-                            <div
-                                className="howworks-hotspot step6"
-                                onMouseEnter={() => setActiveStep("step6")}
-                                onMouseLeave={() => setActiveStep(null)}
-                            />
-
-                            {/* ✅ Popup Card (same for all) */}
-                            <AnimatePresence>
-                                {activeContent && (
-                                    <motion.div
-                                        className="howworks-popup-card"
-                                        initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: 12, scale: 0.96 }}
-                                        transition={{ duration: 0.25, ease: "easeOut" }}
-                                    >
-                                        <h4 className="popup-title">{activeContent.title}</h4>
-
-                                        <p className="popup-subtitle">{activeContent.subtitle}</p>
-
-                                        <p className="popup-desc">
-                                            {activeContent.desc.split("\n").map((line, i) => (
-                                                <span key={i}>
-                                                    {line}
-                                                    <br />
-                                                </span>
-                                            ))}
-                                        </p>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
                         </div>
                     </motion.div>
                 </div>
+
+
             </section>
 
             {/* Footer */}

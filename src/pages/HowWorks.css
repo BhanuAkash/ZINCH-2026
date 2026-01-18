@@ -7,6 +7,10 @@
     background: #ffffff;
 }
 
+.how-work-hero-section {
+    height: 90vh;
+}
+
 .hero-logo img {
     width: 140px;
     height: auto;
@@ -135,8 +139,8 @@
 }
 
 .howworks-hotspot.step3 {
-    top: 80%;
-    left: 12%;
+    top: 94%;
+    left: 18%;
     width: 190px;
     height: 22px;
 }
@@ -167,16 +171,23 @@
 ========================= */
 .howworks-popup-card {
     position: absolute;
-    top: 2.5%;
-    left: 2.5%;
+
+
     width: 340px;
     background: #ffffff;
     border-radius: 16px;
     padding: 18px 18px;
-    z-index: 50;
 
     border: 1px solid rgba(112, 106, 255, 0.35);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
+
+
+    bottom: calc(100% + 14px);
+    /* ABOVE the number */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    pointer-events: auto;
 }
 
 /* glow border */
@@ -188,6 +199,18 @@
     box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.12);
     pointer-events: none;
 }
+
+.howworks-popup-card::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid #0e1f1e; /* match card bg */
+}
+
 
 .popup-title {
     font-size: 16px;
@@ -248,5 +271,121 @@
     .howworks-popup-card {
         width: 270px;
         padding: 16px;
+    }
+}
+
+
+/* CSS NEW FOR INTERACTIVE  */
+
+
+
+/* =====================
+   POINT WRAPPER
+===================== */
+.ibp-pointWrap {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* =====================
+   NUMBER CIRCLE
+===================== */
+.ibp-number {
+    width: 30px;
+    height: 30px;
+    background: #37a49e;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================
+   BLINKING DOT
+===================== */
+.ibp-blink {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(55, 164, 158, 0.35);
+    transform: translate(-50%, -50%);
+    animation: blinkPulse 1.4s infinite;
+    z-index: 1;
+}
+
+@keyframes blinkPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* =====================
+   INFO CARD
+===================== */
+.ibp-card {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0e1f1e;
+    color: #fff;
+    padding: 12px 14px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    animation: fadeUp 0.25s ease;
+    z-index: 10;
+}
+
+.ibp-card h6 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ibp-card p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+/* CARD ARROW */
+.ibp-card::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid #0e1f1e;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
     }
 }
