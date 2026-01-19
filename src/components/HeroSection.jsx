@@ -115,7 +115,7 @@ export default function HeroSection() {
                                     className="btn gradient-border-btn rounded-pill fw-bold px-4 responsive-btn"
                                     whileHover={{ scale: 1.08 }}
                                     whileTap={{ scale: 0.95 }}
-                                    onClick={() => navigate("/contact")}
+                                    onClick={() => navigate("/how-works")}
                                 >
                                     <img
                                         src={PlayButton}

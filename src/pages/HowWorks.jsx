@@ -6,7 +6,7 @@ import PlayButton from "../assets/icons/play-circle.png";
 import Logo from "../assets/logos/logo.png";
 import Rocket from "../assets/icons/rocket-01.png";
 import HeroShape from "../assets/shapes/shape-1.png";
-import howItWorksImg from "../assets/images/how-works.png";
+import howItWorksImg from "../assets/images/how-works.svg";
 import "./HowWorks.css";
 import Header from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -70,7 +70,7 @@ const pointsData = [
         id: 1,
         description: "We understand user needs and define the project scope.",
         top: 4.5,
-        left: 27.5,
+        left: 26.5,
 
         title: "1. Propose a Solution",
         subtitle: "Have an idea that solves a real problem?",
@@ -81,43 +81,43 @@ const pointsData = [
         id: 2,
         title: "Planning & Strategy",
         description: "Roadmap creation and technical planning.",
-        bottom: 40.5,
-        left: 2,
+        bottom: 40,
+        left: 1,
     },
     {
         id: 3,
         title: "Development",
         description: "Design, coding, and feature implementation.",
-        bottom: 1,
-        left: 18,
+        bottom: 0.5,
+        left: 17,
     },
     {
         id: 4,
         title: "Development",
         description: "Design, coding, and feature implementation.",
         bottom: 41,
-        left: 36.5,
+        left: 35.5,
     },
     {
         id: 5,
         title: "Development",
         description: "Design, coding, and feature implementation.",
         bottom: 9,
-        right: 33,
+        right: 34,
     },
     {
         id: 6,
         title: "Development",
         description: "Design, coding, and feature implementation.",
-        bottom: 18.5,
-        right: 20,
+        bottom: 19,
+        right: 20.5,
     },
     {
         id: 7,
         title: "Development",
         description: "Design, coding, and feature implementation.",
-        bottom: 44.5,
-        right: 10,
+        bottom: 44,
+        right: 11,
     }
 ];
 
@@ -307,14 +307,14 @@ export default function HeroSection() {
                                 <AnimatePresence>
                                     {activeId === point.id && activeContent && (
                                         <motion.div
-                                            className="howworks-popup-card"
+                                            className="howworks-popup-card p-4"
                                             initial={{ opacity: 0, y: 14, scale: 0.96 }}
                                             animate={{ opacity: 1, y: 0, scale: 1 }}
                                             exit={{ opacity: 0, y: 14, scale: 0.96 }}
                                             transition={{ duration: 0.25, ease: "easeOut" }}
                                         >
-                                            <h4 className="popup-title">{activeContent.title}</h4>
-                                            <p className="popup-subtitle">{activeContent.subtitle}</p>
+                                            <h4 className="popup-title fw-medium">{activeContent.title}</h4>
+                                            <p className="popup-subtitle fw-semibold">{activeContent.subtitle}</p>
                                             <p className="popup-desc">
                                                 {activeContent.desc.split("\n").map((line, i) => (
                                                     <span key={i}>

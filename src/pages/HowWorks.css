@@ -174,9 +174,8 @@
 
 
     width: 340px;
-    background: #ffffff;
+    background: #ffffffcc;
     border-radius: 16px;
-    padding: 18px 18px;
 
     border: 1px solid rgba(112, 106, 255, 0.35);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
@@ -213,10 +212,6 @@
 
 
 .popup-title {
-    font-size: 16px;
-    font-weight: 900;
-    margin: 0 0 8px;
-    color: #111827;
 }
 
 .popup-subtitle {
@@ -295,7 +290,7 @@
 .ibp-number {
     width: 30px;
     height: 30px;
-    background: #37a49e;
+    background: #000000;
     color: #fff;
     border-radius: 50%;
     font-size: 14px;

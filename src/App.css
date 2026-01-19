@@ -81,6 +81,10 @@ textarea {
   background: #fff;
 }
 
+.navbar {
+  z-index: 99999;
+}
+
 /* Hero Banner Section Starts */
 /* ---------- PAGE LEVEL SHAPE ---------- */
 .hero-page-shape-img {

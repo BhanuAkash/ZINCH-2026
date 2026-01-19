@@ -20,8 +20,8 @@ export default function GetStartedSection() {
             <Navbar />
 
             {/* Get Started */}
-            <section className="get-started-section">
-                <div className="container">
+            <section className="get-started-section pt-5">
+                <div className="container pt-lg-5">
                     <div className="get-started-grid">
 
                         {/* LEFT IMAGE */}

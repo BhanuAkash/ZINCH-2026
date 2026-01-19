@@ -3,7 +3,7 @@ import Logo from '../assets/logos/logo.png'
 
 export default function Navbar() {
     return (
-        <nav className="navbar w-100 position-fixed navbar-expand-lg py-4">
+        <nav className="navbar w-100 position-absolute navbar-expand-lg py-4">
             <div className="container">
                 <Link className="navbar-brand fw-bold" to="/">
                     <img
