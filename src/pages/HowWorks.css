@@ -171,48 +171,70 @@
 ========================= */
 .howworks-popup-card {
     position: absolute;
-
-
     width: 340px;
-    background: #ffffffcc;
+    background: #ffffffe6;
     border-radius: 16px;
 
-    border: 1px solid rgba(112, 106, 255, 0.35);
+    /* REMOVE normal border */
+    border: none;
+
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
 
-
     bottom: calc(100% + 14px);
-    /* ABOVE the number */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 20;
+    z-index: 99;
     pointer-events: auto;
 }
 
-/* glow border */
+/* 🔥 GRADIENT BORDER */
 .howworks-popup-card::before {
     content: "";
     position: absolute;
     inset: 0;
+    padding: 2px;
+    /* border thickness */
     border-radius: 16px;
-    box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.12);
+    background: linear-gradient(135deg, #7C4EE4, #45BFFD);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ✨ SOFT GLOW (kept from your original intent) */
+.howworks-popup-card::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 20px;
+    /* background: radial-gradient(circle at top,
+            rgba(124, 92, 255, 0.35),
+            transparent 60%); */
+    z-index: -2;
     pointer-events: none;
 }
 
-.howworks-popup-card::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 8px solid #0e1f1e; /* match card bg */
+/* 🔻 ARROW (unchanged, exact match) */
+.howworks-popup-card .popup-arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid #ffffffcc;
 }
 
 
-.popup-title {
-}
+
+.popup-title {}
 
 .popup-subtitle {
     font-size: 13px;
@@ -299,7 +321,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 2;
+    z-index: 11;
 }
 
 /* =====================
@@ -346,7 +368,21 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
     animation: fadeUp 0.25s ease;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
+
+.ibp-pointWrap:hover .ibp-card {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.ibp-card {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
 
 .ibp-card h6 {
     margin: 0 0 4px;

@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import "./WhyChooseZinch.css";
 
 // video
-import VideoFile from "../assets/images/video-resume.mp4";
+import VideoFile from "../assets/images/video-resume.webm";
 
 // icons
 import IconShowcase from "../assets/icons/showcase.png";
